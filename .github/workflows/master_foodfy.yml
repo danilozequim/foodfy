@@ -69,3 +69,4 @@ jobs:
           DB_DATABASE: ${{secrets.DB_DATABASE}}
         run: |
           node seed.js
+          npm start
