@@ -1,5 +1,9 @@
 # Foodfy
 
+## Vídeo apresentando pipeline
+https://youtu.be/Xdbc_rSZyxU
+
+
 <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
 
 <p>
