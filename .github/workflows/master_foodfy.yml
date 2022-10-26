@@ -60,7 +60,7 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Seed db
+      - name: Seed db and deploy
         env:
           DB_HOST: ${{secrets.DB_HOST}}
           DB_PORT: ${{secrets.DB_PORT}}
@@ -69,4 +69,4 @@ jobs:
           DB_DATABASE: ${{secrets.DB_DATABASE}}
         run: |
           node seed.js
-          npm start
+          sudo npm start
