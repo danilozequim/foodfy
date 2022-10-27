@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: ./build
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -52,21 +52,5 @@ jobs:
         with:
           app-name: 'foodfy'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5087FB08D2D7402CBB6F38687F3E2003 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_288397E508114CC98E86F7AA4163B9F1 }}
           package: .
-
-      - name: Set up Node.js version
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16.x'
-
-      - name: Seed db and deploy
-        env:
-          DB_HOST: ${{secrets.DB_HOST}}
-          DB_PORT: ${{secrets.DB_PORT}}
-          DB_USERNAME: ${{secrets.DB_USERNAME}}
-          DB_PASSWORD: ${{secrets.DB_PASSWORD}}
-          DB_DATABASE: ${{secrets.DB_DATABASE}}
-        run: |
-          node seed.js
-          sudo npm start
